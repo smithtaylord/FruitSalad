@@ -9,15 +9,7 @@ class AppState extends EventEmitter {
   values = loadState('values', [Value])
 
   /** @type {import('./Models/Player').Player[]} */
-  players = [
-    new Player({
-      name: 'Bobert'
-    }), 
-    new Player
-    ({
-      name: 'Bob'
-    })
-  ]
+  players = loadState('players', [Player])
   activePlayer = null
 
   fruits = ['pear', 'apple','banana', 'dragon fruit', 'cherry', 'blueberry', 'grapes', 'guava', 'kiwi','lemon','lime','papaya','pineapple','raspberry','tangerine','pomegranate','orange','apricot','elderberry','freak fruit']

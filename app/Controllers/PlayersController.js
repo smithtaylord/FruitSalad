@@ -2,6 +2,7 @@ import { appState } from "../AppState.js"
 import { playersServices } from "../Services/PlayersServices.js"
 import { getFormData } from "../Utils/FormHandler.js"
 import { Pop } from "../Utils/Pop.js"
+import { saveState } from "../Utils/Store.js"
 import { setHTML, setText } from "../Utils/Writer.js"
 
 function _drawPlayers(){
@@ -23,7 +24,11 @@ function _drawActiveFruit(){
 }
 
 function _endGame(){
+    let elem = document.getElementById('game')
+    elem.classList.add('d-none')
     window.alert('GAME OVER')
+    saveState('players', appState.players)
+    appState.emit('players')
 }
 
 export class PlayersController{
@@ -73,10 +78,13 @@ export class PlayersController{
     randomFruit(){
         let randomFruit =  appState.fruits[Math.floor(Math.random()*appState.fruits.length)]
         appState.activeFruit = randomFruit
+        document.getElementById('fruitInput').focus()
     }
 
     startGame(){
+        let elem = document.getElementById('game')
+        elem.classList.remove('d-none')
         document.getElementById('fruitInput').focus()
-        setTimeout(_endGame, 1000)
+        setTimeout(_endGame, 10000)
     }
 }

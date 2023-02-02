@@ -7,12 +7,14 @@ export class Player{
         this.id = generateId()
         this.name = data.name
         this.score = 0
+        this.playCount = 0
     }
     get ListTemplate() {
         return `
         <div class="d-flex justify-content-between align-items-center border-dark border-bottom">
         <h2 onclick="app.playersController.setActivePlayer('${this.id}')" class="selectable">${this.name}</h2>
         <h2>SCORE: ${this.score}</h2>
+        <h6>GAMES PLAYED: ${this.playCount}</h6>
         </div>
         `
     
