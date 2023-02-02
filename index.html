@@ -23,7 +23,7 @@
           loading="lazy">
         <span class="ms-2">FruitSalad</span>
         <div>
-          
+
         </div>
       </a>
     </nav>
@@ -33,17 +33,17 @@
       <div class="row">
         <div class="col-8">
           <div class=" d-none" id="game">
-          <div class="row">
-            <div class="col-6 m-auto">
-              <h1 id="activePlayer"></h1>
+            <div class="row">
+              <div class="col-6 m-auto">
+                <h1 id="activePlayer"></h1>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6 m-auto">
+                <h3 id="activeFruit"></h3>
+              </div>
             </div>
           </div>
-          <div class="row">
-            <div class="col-6 m-auto">
-              <h3 id="activeFruit"></h3>
-            </div>
-          </div>
-        </div>
         </div>
         <div class="col-4">
           <div id="playersBox">
@@ -53,7 +53,7 @@
           <form onsubmit="app.playersController.createPlayer()">
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Name</label>
-              <input type="text" class="form-control" id="name" name='name' aria-describedby="emailHelp">
+              <input type="text" class="form-control" id="name" name='name' aria-describedby="emailHelp" min="2">
               <div id="emailHelp" class="form-text">Good Luck Loser!</div>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>

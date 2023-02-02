@@ -2,8 +2,8 @@ import { generateId } from "../Utils/generateId.js"
 
 
 
-export class Player{
-    constructor(data){
+export class Player {
+    constructor(data) {
         this.id = generateId()
         this.name = data.name
         this.score = 0
@@ -17,7 +17,7 @@ export class Player{
         <h6>GAMES PLAYED: ${this.playCount}</h6>
         </div>
         `
-    
+
     }
     get ActivePlayerTemplate() {
         return `
