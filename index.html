@@ -22,14 +22,40 @@
         <img src="https://codeworks.blob.core.windows.net/public/assets/img/cw-mark.png" height="45" alt=""
           loading="lazy">
         <span class="ms-2">FruitSalad</span>
+        <div>
+          
+        </div>
       </a>
     </nav>
   </header>
   <main>
     <div class="container-fluid">
       <div class="row">
-        <div class="col-12">
-          <div id="app"></div>
+        <div class="col-8">
+          <div class="row">
+            <div class="col-6 m-auto">
+              <h1 id="activePlayer"></h1>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6 m-auto">
+              <h3 id="activeFruit"></h3>
+            </div>
+          </div>
+        </div>
+        <div class="col-4">
+          <div id="playersBox">
+            <!-- <h2>Player Name</h2>
+            <h2>Score</h2> -->
+          </div>
+          <form onsubmit="app.playersController.createPlayer()">
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Name</label>
+              <input type="text" class="form-control" id="name" name='name' aria-describedby="emailHelp">
+              <div id="emailHelp" class="form-text">Good Luck Loser!</div>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
         </div>
       </div>
     </div>
